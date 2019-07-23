@@ -48,6 +48,11 @@ main {
 	cursor:pointer;
 }
 
+.house-info
+{
+	color: white;
+}
+
 /* ----- end default styles ----- */
 
 /* ----- image sprite ----- */
