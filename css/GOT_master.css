@@ -125,8 +125,21 @@ main {
 }
 
 video {
-	width: 85%;
-	margin: 10% auto 10% auto;
+	width: 50%;
+	margin: 5% auto 5% auto;
 	border: thin solid #949393;
 	display: block;
+}
+
+
+.video-controls i
+{
+	color: white;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.fa-times-circle:hover
+{
+	cursor: pointer;
 }

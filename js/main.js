@@ -9,7 +9,11 @@
 		  houseVideo = document.querySelector('.house-stark'),
 		  bannerImages = document.querySelector('#houseImages'),
 		  houseName = document.querySelector('#house-name'),
-		  houseInfo = document.querySelector('.house-info');
+		  houseInfo = document.querySelector('.house-info'),
+		  pauseButton = document.querySelector(".fa-pause");
+		  rewindButton = document.querySelector(".fa-backward");
+		  playButton = document.querySelector(".fa-play");
+
 
 		  // houseData is a multidimensional array (arrays within arrays) Data containers can hold anything - in this case, eahc index or entry holds another, smaller container with 2 indexes - 1 with the house name, one with the house data
 		  // whne you click on a chield, the dataset.offset property is a 0 through 4 thats pointing at the min index of the houseData array (stark, baratheon, lannister etc.) So the syntax becomes houseData[0][0] for the house name and houseData[0][1] for the house data. Each gets assigned to the h1 and the paragraph tag
@@ -32,6 +36,27 @@
 // houseData[5][0] is "arryn", houseData[5][1]
 	   ["arryn", `House Arryn of the Eyrie is one of the Great Houses of Westeros. It has ruled over the Vale of Arryn for millennia, originally as the Kings of Mountain and Vale and more recently as Lords Paramount of the Vale and Wardens of the East under the Targaryen kings and Baratheon-Lannister kings. The nominal head of House Arryn is Robin Arryn, the Lord of the Eyrie, with his stepfather Petyr Baelish acting as Lord Protector until he reaches the age of majority. `]
 	   ];
+
+	   // pause video on a click
+	   function pauseVideo() {
+	   	houseVideo.pause();
+	   	console.log("STOP! (in the name of love)");
+	   }
+
+	   // write the other functions for custom video controls (play, volume, time counter, progress bar scrubber etc.)
+	   function playVideo() {
+	   	houseVideo.play();
+
+	   	console.log("Play ball!");
+	   }
+
+	   function rewindVideo() {
+	   	houseVideo.currentTime = 0;
+
+	   	console.log("Restart?");
+	   }
+
+	   
 
 	function popLightBox() {
 		// make the lightbox show up
@@ -100,4 +125,8 @@
 	closeButton.addEventListener("click", closeLightBox);
 
 	houseVideo.addEventListener('ended', closeLightBox);
+
+	pauseButton.addEventListener('click', pauseVideo);
+	playButton.addEventListener('click', playVideo);
+	rewindButton.addEventListener('click', rewindVideo);
 })();
