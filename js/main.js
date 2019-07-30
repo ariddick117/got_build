@@ -37,6 +37,26 @@
 		// make the lightbox show up
 		lightBox.classList.add('show-lightbox');
 
+
+		// grab a reference to the current video via the className object on the shield
+		// debugger; // allows you to see what happens when you CLICK
+
+		// get the className property, split it into seperate words (aka an ARRAY) via an empty character
+		// then get the second word [1] that will be the house name
+		let houseName = this.className.split(" ")[1];
+
+		// capitalize the first letter using Javascript String Methods
+		houseName = houseName.charAt(0).toUpperCase() + houseName.slice(1); // () means that it is a method
+		// the slice is there to add the rest of the word back after taking the first letter off to capitalize
+
+		// use Javascript string interpolation to build a path to the target video
+		let videoPath = `video/House-${houseName}.mp4`;
+
+		// load this new video videoPath
+		houseVideo.src = videoPath;
+
+		houseVideo.load();
+
 		houseVideo.play();
 	}
 
@@ -73,8 +93,8 @@
 
 	}
 
-	// sigils.forEach(sigil => sigil.addEventListener("click", popLightBox));
-	sigils.forEach(sigil => sigil.addEventListener("click", animateBanners));
+	sigils.forEach(sigil => sigil.addEventListener("click", popLightBox));
+	// sigils.forEach(sigil => sigil.addEventListener("click", animateBanners));
 
 
 	closeButton.addEventListener("click", closeLightBox);
